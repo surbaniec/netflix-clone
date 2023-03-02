@@ -1,5 +1,13 @@
+import FooterContainer from './containers/footer';
+import { JumbotronContainer } from './containers/jumbotron';
+
 function App() {
-  return <div className='App'></div>;
+  return (
+    <>
+      <JumbotronContainer />
+      <FooterContainer />
+    </>
+  );
 }
 
 export default App;
