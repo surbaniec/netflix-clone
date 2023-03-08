@@ -4,13 +4,24 @@ import Home from './pages/home';
 import Browse from './pages/browse';
 import SignUp from './pages/signup';
 import SignIn from './pages/signin';
+import { ProtectedRoute } from './helpers/ProtectedRoute';
 
 function App() {
+  const user = {};
+
   return (
     <Router>
       <Routes>
         <Route exact path={ROUTES.HOME} element={<Home />} />
-        <Route exact path={ROUTES.BROWSE} element={<Browse />} />
+        <Route
+          exact
+          path={ROUTES.BROWSE}
+          element={
+            <ProtectedRoute user={user}>
+              <Browse />
+            </ProtectedRoute>
+          }
+        />
         <Route exact path={ROUTES.SIGN_IN} element={<SignIn />} />
         <Route exact path={ROUTES.SIGN_UP} element={<SignUp />} />
       </Routes>
