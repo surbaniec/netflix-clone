@@ -5,16 +5,16 @@ import Browse from './pages/browse';
 import SignUp from './pages/signup';
 import SignIn from './pages/signin';
 import { ProtectedRoute } from './helpers/ProtectedRoute';
+import { useAuthListener } from './hooks';
 
 function App() {
-  const user = {};
+  const { user } = useAuthListener();
 
   return (
     <Router>
       <Routes>
         <Route exact path={ROUTES.HOME} element={<Home />} />
         <Route
-          exact
           path={ROUTES.BROWSE}
           element={
             <ProtectedRoute user={user}>
@@ -22,8 +22,8 @@ function App() {
             </ProtectedRoute>
           }
         />
-        <Route exact path={ROUTES.SIGN_IN} element={<SignIn />} />
-        <Route exact path={ROUTES.SIGN_UP} element={<SignUp />} />
+        <Route path={ROUTES.SIGN_IN} element={<SignIn />} />
+        <Route path={ROUTES.SIGN_UP} element={<SignUp />} />
       </Routes>
     </Router>
   );
