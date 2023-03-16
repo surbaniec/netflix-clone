@@ -6,6 +6,8 @@ import Header from '../components/header';
 import Card from '../components/card';
 import * as ROUTES from '../constants/routes';
 import logo from '../logo.svg';
+import FooterContainer from './footer';
+import Player from '../components/player';
 
 function BrowseContainer({ slides }) {
   const { firebaseConnection } = useContext(FirebaseContext);
@@ -100,14 +102,15 @@ function BrowseContainer({ slides }) {
               ))}
             </Card.Entities>
             <Card.Feature category={category}>
-              {/* <Player>
+              <Player>
                 <Player.Button />
-                <Player.Vide src='/videos/bunny.mp4' />
-              </Player> */}
+                <Player.Video src='/videos/bunny.mp4' />
+              </Player>
             </Card.Feature>
           </Card>
         ))}
       </Card.Group>
+      <FooterContainer />
     </>
   ) : (
     <SelectProfileContainer user={user} setProfile={setProfile} />
