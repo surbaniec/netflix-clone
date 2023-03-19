@@ -16,7 +16,7 @@ describe('<Jumbotron />', () => {
               <Jumbotron.Image
                 src={item.image}
                 alt={item.alt}
-                data-testid={`${item.id}-jumbo-image}`}
+                data-testid={`${item.id}-jumbo-image`}
               />
             </Jumbotron.Pane>
           </Jumbotron>

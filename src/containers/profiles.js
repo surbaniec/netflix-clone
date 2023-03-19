@@ -22,6 +22,7 @@ function SelectProfileContainer({ user, setProfile }) {
                 photoURL: user.photoURL,
               })
             }
+            data-testid='user-profile'
           >
             <Profiles.Picture src={user.photoURL} />
             <Profiles.Name>{user.displayName}</Profiles.Name>
